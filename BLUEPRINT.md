@@ -24,26 +24,26 @@ Decision: **aipm** (`@ai-plugin-marketplace/cli`) owns manifest generation and v
 Each plugin declares supported hosts in `plugins/<name>/aipm.config.ts`:
 
 ```ts
-targets: ['claude', 'cursor']
+targets: ["claude", "cursor"];
 ```
 
 Build refuses plugins that carry files for undeclared targets. Current repo scope is Cursor + Claude Code only; Codex/Gemini/Open-plugins artifacts are removed, not generated.
 
 ## Build and validation
 
-| Command | Role |
-|---------|------|
+| Command      | Role                                                                         |
+| ------------ | ---------------------------------------------------------------------------- |
 | `pnpm build` | `aipm build` — regenerate marketplace registries and toolkit-owned artifacts |
-| `pnpm check` | `aipm validate` — schema, envelope, marketplace registration, freshness |
+| `pnpm check` | `aipm validate` — schema, envelope, marketplace registration, freshness      |
 
 CI (`.github/workflows/ci.yml`) runs build then fails if the working tree is dirty — generated files must be committed.
 
 ## Local linking (`scripts/link-local.mjs`)
 
-| Host | Global symlink target | Discovery mechanism |
-|------|----------------------|---------------------|
-| **Cursor** | `~/.cursor/plugins/local/<plugin>` | `.cursor-plugin/plugin.json` present |
-| **Claude Code** | `~/.claude/skills/<plugin>` | `.claude-plugin/plugin.json` present; loads in-place as `@skills-dir` |
+| Host            | Global symlink target              | Discovery mechanism                                                   |
+| --------------- | ---------------------------------- | --------------------------------------------------------------------- |
+| **Cursor**      | `~/.cursor/plugins/local/<plugin>` | `.cursor-plugin/plugin.json` present                                  |
+| **Claude Code** | `~/.claude/skills/<plugin>`        | `.claude-plugin/plugin.json` present; loads in-place as `@skills-dir` |
 
 Plugin name comes from manifest `name`, falling back to directory name.
 
@@ -58,7 +58,7 @@ Decision: symlink into repo (not copy) so hook/skill edits are immediately live 
 ## Marketplace identity
 
 - Marketplace name: `jhrdina-ai-tooling`
-- Owner: Jan Hrdka (`jan.hrdka@gmail.com`)
+- Owner: Jan Hrdina (`jan.hrdka@gmail.com`)
 
 ## Plugin: hspec
 
