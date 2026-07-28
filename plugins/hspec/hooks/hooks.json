@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "stop": [
+      {
+        "command": "./hooks/hspec-requirements-sync.sh",
+        "loop_limit": 1
+      }
+    ]
+  }
+}

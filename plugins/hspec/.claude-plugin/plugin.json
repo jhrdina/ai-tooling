@@ -1,0 +1,10 @@
+{
+  "name": "hspec",
+  "version": "0.1.0",
+  "description": "Requirements specification skill with automatic post-turn requirements sync hook.",
+  "author": {
+    "name": "Jan Hrdka",
+    "email": "jan.hrdka@gmail.com"
+  },
+  "keywords": ["requirements", "hspec", "specification", "hooks"]
+}

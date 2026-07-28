@@ -1,0 +1,19 @@
+{
+  "name": "ai-tooling",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "build": "aipm build",
+    "check": "aipm validate",
+    "scaffold": "aipm scaffold",
+    "link": "node scripts/link-local.mjs",
+    "link:plugins": "node scripts/link-local.mjs",
+    "unlink": "node scripts/link-local.mjs --unlink",
+    "unlink:plugins": "node scripts/link-local.mjs --unlink"
+  },
+  "devDependencies": {
+    "@ai-plugin-marketplace/cli": "^0.6.0",
+    "@ai-plugin-marketplace/core": "^0.9.0"
+  }
+}
